@@ -1,39 +1,111 @@
-<!DOCTYPE html> 
-<html lang="pt-br"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Blog</title> 
-<style> 
-header{ 
-background-color: #0000CD; 
-color: #00BFFF; 
-text-align: center; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-main{ 
-background-color: #00BFFF; 
-color: #0000CD; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-img{ 
-width: 80px; 
-height: 80px; 
-} 
-</style> 
-</head> 
-<body> 
-<header> 
-<h1>Conexão Boleia</h1> 
-<p>Vou compartilhar conhecimentos sobre caminhões</p> </header> 
-<main> 
-<img src="logo.png" alt="Logotipo de um caminhao escrito ConexãoBoleia em dois tom de azul. em uma rodovia um caminhao muito top.."> <h2>Fala galera sejam bem-vindos na ConexãoBoleia</h2> 
-<p>Por: Ezequiel oliveira</p> 
-<p>Fala, galera! Sejam muito bem-vindos no meu blog!</p> 
-<p>Fala, galera! Sejam muito bem-vindos ao meu blog! Todos me chamam de Ezequiel, e criei o ConexãoBoleia — com essa vibe icônica azul escuro e azul neon — para ser o nosso ponto de encontro oficial para falar sobre caminhões de um jeito mais dahora, sincero e sem enrolação. Por aqui,
-vou soltar as melhores indicações, comentar sobre lançamentos de caminhões e falar a real sobre o que vamos falar aqui, então fiquem à vontade para debater nos comentários e me contar logo de cara: qual caminhão favorito de vocês?</p> </main> 
-</body> 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        header {
+            /* Cores baseadas no seu código original */
+            background-color: #0000CD; /* Azul escuro */
+            color: #00BFFF; /* Azul neon/claro */
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        main {
+            /* Cores baseadas no seu código original (invertidas para contraste) */
+            background-color: #00BFFF; /* Azul neon/claro */
+            color: #0000CD; /* Azul escuro */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        
+        article {
+            display: flex;
+            align-items: flex-start; /* Alinha a imagem no topo do texto */
+            margin-bottom: 20px; /* Adiciona um espaço entre os posts */
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px; /* Adiciona espaço entre a imagem e o texto */
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        /* Estilização básica para os botões ficarem mais legais */
+        button {
+            background: #fff;
+            border: 1px solid #0000CD;
+            color: #0000CD;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Conexão Boleia</h1>
+        <p>Vou compartilhar conhecimentos sobre caminhões</p>
+    </header>
+    <main>
+        <article>
+            <img src="logo.png"
+                alt="Logotipo de um caminhão escrito ConexãoBoleia em dois tons de azul.">
+            <div>
+                <h2>Fala galera sejam bem-vindos na ConexãoBoleia</h2>
+                <p class="artigo-autor">Por: Ezequiel Oliveira</p>
+                <p>Fala, galera! Sejam muito bem-vindos ao meu blog! Todos me chamam de Ezequiel, e criei o ConexãoBoleia — com essa vibe icônica azul escuro e azul neon — para ser o nosso ponto de encontro oficial para falar sobre caminhões de um jeito mais dahora, sincero e sem enrolação. Por aqui, vou soltar as melhores indicações, comentar sobre lançamentos de caminhões e falar a real sobre o que vamos falar aqui, então fiquem à vontade para debater nos comentários e me contar logo de cara: qual caminhão favorito de vocês?</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+        
+        <article>
+            <img src="logo.png"
+                alt="Logotipo de um caminhão escrito ConexãoBoleia em dois tons de azul.">
+            <div>
+                <h2>Título do 2º post</h2>
+                <p class="artigo-autor">Por: Ezequiel Oliveira</p>
+                <p>Escrita do 2º post. Aqui você pode começar um novo assunto sobre o mundo dos caminhões!</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
+</body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else{
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    })
+</script>
+
 </html>
